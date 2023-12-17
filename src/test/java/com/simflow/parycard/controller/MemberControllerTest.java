@@ -2,17 +2,13 @@ package com.simflow.parycard.controller;
 
 import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_LIST;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.simflow.parycard.member.dto.MemberDto;
-import com.simflow.parycard.util.ObjectMapperFactory;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -29,7 +25,8 @@ public class MemberControllerTest {
     private ObjectMapper objectMapper;
 
     @Test
-    public void retrieveOwnerUserListNew() throws Exception {
+    @Transactional
+    public void retrieveMemberList() throws Exception {
         var body = MemberDto.RequestSearch.builder()
             .memberName("leentj")
             .build();
