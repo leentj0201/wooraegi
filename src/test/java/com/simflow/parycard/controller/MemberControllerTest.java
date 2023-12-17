@@ -1,5 +1,6 @@
 package com.simflow.parycard.controller;
 
+import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_CREATE;
 import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_LIST;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +34,27 @@ public class MemberControllerTest {
             .build();
 
         ResultActions result = mockMvc.perform(post(MEMBER_LIST)
+                .content(objectMapper.writeValueAsString(body))
+                .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk());
+
+        // You can perform additional assertions based on the response if needed
+        // For example, checking the response content
+        result.andExpect(mvcResult -> {
+            String response = mvcResult.getResponse().getContentAsString();
+            // Add your assertions based on the response content
+            // For example, assertTrue(response.contains("Received: 123, John Doe"));
+        });
+    }
+    @Test
+    @Transactional
+    @Rollback(value = false)
+    public void createMember() throws Exception {
+        var body = MemberDto.RequestCreate.builder()
+            .memberName("leentj")
+            .build();
+
+        ResultActions result = mockMvc.perform(post(MEMBER_CREATE)
                 .content(objectMapper.writeValueAsString(body))
                 .contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk());
