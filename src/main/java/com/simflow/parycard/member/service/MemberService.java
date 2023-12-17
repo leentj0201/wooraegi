@@ -20,4 +20,10 @@ public class MemberService {
             .map(MemberDto.ResponseSearch::of)
             .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public MemberDto.ResponseCreate createMember(MemberDto.RequestCreate requestCreate) {
+        var member =  memberDomainService.save(requestCreate.getMemberName());
+        return MemberDto.ResponseCreate.of(member);
+    }
 }

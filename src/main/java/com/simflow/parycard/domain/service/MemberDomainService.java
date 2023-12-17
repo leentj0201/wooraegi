@@ -11,9 +11,18 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MemberDomainService {
+
     private final MemberRepository memberRepository;
 
     public List<Member> findByMemberName(String memberName) {
         return memberRepository.findByMemberName(memberName);
+    }
+
+    public Member save(String memberName) {
+        return memberRepository.save(
+            Member.builder()
+                .memberName(memberName)
+                .build()
+        );
     }
 }
