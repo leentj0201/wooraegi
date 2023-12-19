@@ -1,8 +1,8 @@
-package com.simflow.parycard.member.service;
+package com.simflow.parycard.api.member.service;
 
 import com.simflow.parycard.domain.service.MemberDomainService;
-import com.simflow.parycard.member.dto.MemberDto;
-import com.simflow.parycard.member.dto.MemberDto.ResponseMember;
+import com.simflow.parycard.api.member.dto.MemberDto;
+import com.simflow.parycard.api.member.dto.MemberDto.ResponseMember;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;

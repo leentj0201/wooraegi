@@ -1,15 +1,12 @@
 package com.simflow.parycard.controller;
 
-import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_CREATE;
 import static com.simflow.parycard.endpoint.PrayEndPoint.PRAY_CREATE;
 import static com.simflow.parycard.endpoint.PrayEndPoint.PRAY_LIST;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.simflow.parycard.member.dto.MemberDto;
-import com.simflow.parycard.member.dto.PrayDto;
-import com.simflow.parycard.member.dto.PrayDto.RequestPrayList;
+import com.simflow.parycard.api.pray.dto.PrayDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

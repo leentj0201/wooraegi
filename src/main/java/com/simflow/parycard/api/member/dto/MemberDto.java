@@ -1,4 +1,4 @@
-package com.simflow.parycard.member.dto;
+package com.simflow.parycard.api.member.dto;
 
 import com.simflow.parycard.domain.entity.Member;
 import lombok.AccessLevel;

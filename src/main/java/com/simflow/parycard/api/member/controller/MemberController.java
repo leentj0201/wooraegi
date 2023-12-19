@@ -1,12 +1,12 @@
-package com.simflow.parycard.member.controller;
+package com.simflow.parycard.api.member.controller;
 
 
 import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_CREATE;
 import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_LIST;
 
-import com.simflow.parycard.member.dto.MemberDto;
-import com.simflow.parycard.member.dto.MemberDto.ResponseMember;
-import com.simflow.parycard.member.service.MemberService;
+import com.simflow.parycard.api.member.service.MemberService;
+import com.simflow.parycard.api.member.dto.MemberDto;
+import com.simflow.parycard.api.member.dto.MemberDto.ResponseMember;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

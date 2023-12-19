@@ -1,8 +1,8 @@
-package com.simflow.parycard.member.service;
+package com.simflow.parycard.api.pray.service;
 
 import com.simflow.parycard.domain.entity.UserContext;
 import com.simflow.parycard.domain.service.PrayDomainService;
-import com.simflow.parycard.member.dto.PrayDto;
+import com.simflow.parycard.api.pray.dto.PrayDto;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;

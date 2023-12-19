@@ -2,7 +2,7 @@ package com.simflow.parycard.domain.service;
 
 import com.simflow.parycard.domain.entity.Pray;
 import com.simflow.parycard.domain.repository.jpa.PrayRepository;
-import com.simflow.parycard.member.dto.PrayDto;
+import com.simflow.parycard.api.pray.dto.PrayDto;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

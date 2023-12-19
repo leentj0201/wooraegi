@@ -1,12 +1,12 @@
-package com.simflow.parycard.member.controller;
+package com.simflow.parycard.api.pray.controller;
 
 
 import static com.simflow.parycard.endpoint.PrayEndPoint.PRAY_CREATE;
 import static com.simflow.parycard.endpoint.PrayEndPoint.PRAY_LIST;
 
 import com.simflow.parycard.domain.entity.UserContext;
-import com.simflow.parycard.member.dto.PrayDto;
-import com.simflow.parycard.member.service.PrayService;
+import com.simflow.parycard.api.pray.dto.PrayDto;
+import com.simflow.parycard.api.pray.service.PrayService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
