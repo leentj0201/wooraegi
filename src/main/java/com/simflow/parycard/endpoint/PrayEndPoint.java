@@ -8,5 +8,6 @@ public class PrayEndPoint {
     public static final String PRAY_UPDATE = PRAY_ROOT + "/update";
     public static final String PRAY_DELETE = PRAY_ROOT + "/delete";
     public static final String PRAY_LIST = PRAY_ROOT + "/list";
+    public static final String PRAY_LIST_ALL = PRAY_ROOT + "/list/all";
 
 }

@@ -3,6 +3,7 @@ package com.simflow.parycard.api.pray.controller;
 
 import static com.simflow.parycard.endpoint.PrayEndPoint.PRAY_CREATE;
 import static com.simflow.parycard.endpoint.PrayEndPoint.PRAY_LIST;
+import static com.simflow.parycard.endpoint.PrayEndPoint.PRAY_LIST_ALL;
 
 import com.simflow.parycard.domain.entity.UserContext;
 import com.simflow.parycard.api.pray.dto.PrayDto;
@@ -20,9 +21,9 @@ public class PrayController {
     private final PrayService prayService;
 
     /**
-     * @return PrayDto.ResponsePray
+     * @return CellDto.ResponsePray
      */
-    @PostMapping(PRAY_LIST)
+    @PostMapping(PRAY_LIST_ALL)
     public List<PrayDto.ResponsePray> retrievePrayListAll() {
         return prayService.retrievePrayListAll();
     }
@@ -30,10 +31,10 @@ public class PrayController {
     /**
      * @param
      *
-     * @return PrayDto.ResponsePray
+     * @return CellDto.ResponsePray
      */
     @PostMapping(PRAY_CREATE)
-    public PrayDto.ResponsePray saveMember(@RequestBody PrayDto.RequestCreate requestCreate) {
+    public PrayDto.ResponsePray createPray(@RequestBody PrayDto.RequestCreate requestCreate) {
         var userContext = UserContext.builder().memberId("280c7bee-0f6e-4b71-8254-cc2a75147634").build(); //todo 로그인 구현하여 제거
         return prayService.createPray(requestCreate, userContext);
     }

@@ -1,6 +1,7 @@
 package com.simflow.parycard.api.pray.service;
 
 import com.simflow.parycard.domain.entity.UserContext;
+import com.simflow.parycard.domain.service.MemberDomainService;
 import com.simflow.parycard.domain.service.PrayDomainService;
 import com.simflow.parycard.api.pray.dto.PrayDto;
 import java.util.List;
