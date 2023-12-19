@@ -1,11 +1,12 @@
 package com.simflow.parycard.domain.repository.jpa;
 
 import com.simflow.parycard.domain.entity.Member;
+import com.simflow.parycard.domain.entity.Pray;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MemberRepository extends JpaRepository<Member, String> {
+public interface PrayRepository extends JpaRepository<Pray, String> {
 
-    List<Member> findByMemberName(String memberName);
+    List<Pray> findByMemberId(String memberId);
 
 }
