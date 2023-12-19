@@ -28,7 +28,7 @@ public class MemberDto {
     @Builder
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     @AllArgsConstructor
-    public static class ResponseSearch {
+    public static class ResponseMember {
 
         /**
          * 멤버 아이디
@@ -40,8 +40,8 @@ public class MemberDto {
          */
         private String memberName;
 
-        public static ResponseSearch of(Member member) {
-            return ResponseSearch.builder()
+        public static ResponseMember of(Member member) {
+            return ResponseMember.builder()
                 .memberId(member.getMemberId())
                 .memberName(member.getMemberName())
                 .build();
@@ -60,30 +60,4 @@ public class MemberDto {
          */
         private String memberName;
     }
-
-    @Getter
-    @Setter
-    @Builder
-    @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    @AllArgsConstructor
-    public static class ResponseCreate {
-
-        /**
-         * 멤버 아이디
-         */
-        private String memberId;
-
-        /**
-         * 멤버 이름
-         */
-        private String memberName;
-
-        public static ResponseCreate of(Member member) {
-            return ResponseCreate.builder()
-                .memberId(member.getMemberId())
-                .memberName(member.getMemberName())
-                .build();
-        }
-    }
-
 }
