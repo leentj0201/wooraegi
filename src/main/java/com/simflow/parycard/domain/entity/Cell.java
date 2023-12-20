@@ -1,10 +1,14 @@
 package com.simflow.parycard.domain.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,4 +52,10 @@ public class Cell extends BaseEntity {
      */
     private Boolean isUsed;
 
+    /**
+     * 셀의 멤버 목록
+     */
+    @Builder.Default
+    @OneToMany(mappedBy = "cell", fetch = FetchType.LAZY)
+    private List<MemberCell> memberList = new ArrayList<>();
 }

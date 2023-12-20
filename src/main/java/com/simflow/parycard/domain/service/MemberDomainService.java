@@ -17,6 +17,9 @@ public class MemberDomainService {
     public List<Member> findByMemberName(String memberName) {
         return memberRepository.findByMemberName(memberName);
     }
+    public Member findById(String memberId) {
+        return memberRepository.findById(memberId).orElse(null);
+    }
 
     public Member save(String memberName) {
         return memberRepository.save(
