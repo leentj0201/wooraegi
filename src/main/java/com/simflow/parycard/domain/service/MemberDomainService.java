@@ -1,7 +1,10 @@
 package com.simflow.parycard.domain.service;
 
+import com.simflow.parycard.api.member.dto.MemberCellDto;
 import com.simflow.parycard.domain.entity.Member;
+import com.simflow.parycard.domain.entity.UserContext;
 import com.simflow.parycard.domain.repository.jpa.MemberRepository;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +22,10 @@ public class MemberDomainService {
     }
     public Member findById(String memberId) {
         return memberRepository.findById(memberId).orElse(null);
+    }
+
+    public List<MemberCellDto.ResponseSearch> searchMemberCellList(MemberCellDto.RequestSearch requestSearch, UserContext userContext) {
+        return memberRepository.searchMemberCellList(requestSearch, userContext);
     }
 
     public Member save(String memberName) {

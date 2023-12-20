@@ -1,12 +1,16 @@
 package com.simflow.parycard.api.member.controller;
 
 
+import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_CELL_LIST;
 import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_CREATE;
 import static com.simflow.parycard.endpoint.MemberEndPoint.MEMBER_LIST;
 
+import com.simflow.parycard.api.member.dto.MemberCellDto;
 import com.simflow.parycard.api.member.service.MemberService;
 import com.simflow.parycard.api.member.dto.MemberDto;
 import com.simflow.parycard.api.member.dto.MemberDto.ResponseMember;
+import com.simflow.parycard.domain.entity.MemberCell;
+import com.simflow.parycard.domain.entity.UserContext;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,4 +42,9 @@ public class MemberController {
         return memberService.createMember(requestCreate);
     }
 
+    @PostMapping(MEMBER_CELL_LIST)
+    public List<MemberCellDto.ResponseSearch> searchMemberCellList(@RequestBody MemberCellDto.RequestSearch requestSearch) {
+        var userContext = UserContext.builder().memberId("280c7bee-0f6e-4b71-8254-cc2a75147634").build(); //todo 로그인 구현하여 제거
+        return memberService.searchMemberCellList(requestSearch, userContext);
+    }
 }

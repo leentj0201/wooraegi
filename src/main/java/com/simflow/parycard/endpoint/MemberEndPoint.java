@@ -8,5 +8,6 @@ public class MemberEndPoint {
     public static final String MEMBER_UPDATE = MEMBER_ROOT + "/update";
     public static final String MEMBER_DELETE = MEMBER_ROOT + "/delete";
     public static final String MEMBER_LIST = MEMBER_ROOT + "/list";
+    public static final String MEMBER_CELL_LIST = MEMBER_ROOT + "/cell-list";
 
 }
