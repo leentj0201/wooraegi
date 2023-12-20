@@ -1,5 +1,7 @@
 package com.simflow.parycard.api.member.service;
 
+import com.simflow.parycard.api.member.dto.MemberCellDto;
+import com.simflow.parycard.domain.entity.UserContext;
 import com.simflow.parycard.domain.service.MemberDomainService;
 import com.simflow.parycard.api.member.dto.MemberDto;
 import com.simflow.parycard.api.member.dto.MemberDto.ResponseMember;
@@ -22,9 +24,15 @@ public class MemberService {
             .collect(Collectors.toList());
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public MemberDto.ResponseMember createMember(MemberDto.RequestCreate requestCreate) {
         var member =  memberDomainService.save(requestCreate.getMemberName());
         return MemberDto.ResponseMember.of(member);
+    }
+
+    @Transactional(readOnly = true)
+    public List<MemberCellDto.ResponseSearch> searchMemberCellList(MemberCellDto.RequestSearch requestSearch, UserContext userContext) {
+        return memberDomainService.searchMemberCellList(requestSearch, userContext);
+
     }
 }

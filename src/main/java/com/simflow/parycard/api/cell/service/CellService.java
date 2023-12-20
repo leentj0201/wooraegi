@@ -14,8 +14,9 @@ import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@RequiredArgsConstructor
+
 @Service
+@RequiredArgsConstructor
 public class CellService {
 
     private final CellDomainService cellDomainService;
