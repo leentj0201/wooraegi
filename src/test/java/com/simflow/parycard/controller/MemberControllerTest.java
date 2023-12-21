@@ -50,7 +50,7 @@ public class MemberControllerTest {
     }
     @Test
     @Transactional
-    @Rollback(value = false)
+    @Rollback(value = true)
     public void createMember() throws Exception {
         var body = MemberDto.RequestCreate.builder()
             .memberName("leentj")

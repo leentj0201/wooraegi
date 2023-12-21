@@ -49,7 +49,7 @@ public class PrayControllerTest {
 
     @Test
     @Transactional
-    @Rollback(value = false)
+    @Rollback(value = true)
     public void createPray() throws Exception {
         var body = PrayDto.RequestCreate.builder()
             .prayTitle("pray title")

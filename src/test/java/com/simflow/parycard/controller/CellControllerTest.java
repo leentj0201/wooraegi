@@ -49,7 +49,7 @@ public class CellControllerTest {
 
     @Test
     @Transactional
-    @Rollback(value = false)
+    @Rollback(value = true)
     public void createCell() throws Exception {
         var body = CellDto.RequestCreate.builder()
             .cellName("cell name")
