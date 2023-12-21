@@ -1,6 +1,7 @@
 package com.simflow.parycard.domain.service;
 
 import com.simflow.parycard.api.member.dto.MemberCellDto;
+import com.simflow.parycard.api.member.dto.MemberPrayDto;
 import com.simflow.parycard.domain.entity.Member;
 import com.simflow.parycard.domain.entity.UserContext;
 import com.simflow.parycard.domain.repository.jpa.MemberRepository;
@@ -26,6 +27,10 @@ public class MemberDomainService {
 
     public List<MemberCellDto.ResponseSearch> searchMemberCellList(MemberCellDto.RequestSearch requestSearch, UserContext userContext) {
         return memberRepository.searchMemberCellList(requestSearch, userContext);
+    }
+
+    public List<MemberPrayDto.ResponseSearch> searchMemberPrayList(MemberPrayDto.RequestSearch requestSearch, UserContext userContext) {
+        return memberRepository.searchMemberPrayList(requestSearch, userContext);
     }
 
     public Member save(String memberName) {

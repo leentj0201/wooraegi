@@ -1,6 +1,7 @@
 package com.simflow.parycard.api.member.service;
 
 import com.simflow.parycard.api.member.dto.MemberCellDto;
+import com.simflow.parycard.api.member.dto.MemberPrayDto;
 import com.simflow.parycard.domain.entity.UserContext;
 import com.simflow.parycard.domain.service.MemberDomainService;
 import com.simflow.parycard.api.member.dto.MemberDto;
@@ -33,6 +34,12 @@ public class MemberService {
     @Transactional(readOnly = true)
     public List<MemberCellDto.ResponseSearch> searchMemberCellList(MemberCellDto.RequestSearch requestSearch, UserContext userContext) {
         return memberDomainService.searchMemberCellList(requestSearch, userContext);
+
+    }
+
+    @Transactional(readOnly = true)
+    public List<MemberPrayDto.ResponseSearch> searchMemberPrayList(MemberPrayDto.RequestSearch requestSearch, UserContext userContext) {
+        return memberDomainService.searchMemberPrayList(requestSearch, userContext);
 
     }
 }

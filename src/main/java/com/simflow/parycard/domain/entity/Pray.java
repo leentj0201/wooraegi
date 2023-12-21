@@ -1,10 +1,14 @@
 package com.simflow.parycard.domain.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,5 +52,11 @@ public class Pray extends BaseEntity {
      */
     private Boolean isOpened;
 
+    /**
+     * 기도의 멤버 목록
+     */
+    @Builder.Default
+    @OneToMany(mappedBy = "pray", fetch = FetchType.LAZY)
+    private List<MemberPray> memberList = new ArrayList<>();
 
 }

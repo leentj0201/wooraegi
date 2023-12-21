@@ -43,4 +43,11 @@ public class Member extends BaseEntity {
     @Builder.Default
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
     private List<MemberCell> cellList = new ArrayList<>();
+
+    /**
+     * 멤버의 셀 목록
+     */
+    @Builder.Default
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+    private List<MemberPray> prayList = new ArrayList<>();
 }

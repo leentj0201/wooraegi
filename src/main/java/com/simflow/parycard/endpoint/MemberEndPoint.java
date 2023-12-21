@@ -9,5 +9,6 @@ public class MemberEndPoint {
     public static final String MEMBER_DELETE = MEMBER_ROOT + "/delete";
     public static final String MEMBER_LIST = MEMBER_ROOT + "/list";
     public static final String MEMBER_CELL_LIST = MEMBER_ROOT + "/cell-list";
+    public static final String MEMBER_PRAY_LIST = MEMBER_ROOT + "/pray-list";
 
 }
