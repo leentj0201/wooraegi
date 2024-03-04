@@ -26,6 +26,8 @@ public class CellControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
+
+
     @Test
     @Transactional
     public void retrieveCellListAll() throws Exception {
